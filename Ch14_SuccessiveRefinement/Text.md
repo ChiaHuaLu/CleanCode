@@ -54,3 +54,13 @@ to the end of the festering pile (Listing 14-11).
 `Listing 14-11`  
 `ArgumentMarshaller appended to Args.java`
 ---
+I made the simplest modification I could, one that would break as little as possible.
+I changed the `HashMap` for the `Boolean` arguments to take an `ArgumentMarshaler`.
+
+Notice how these changes are in exactly the areas that I mentioned before:
+the `parse`, `set`, and `get` for the argument type.
+
+Unfortunately, if you call `getBoolean` with `'y'`, but there is no `y` argument, 
+then `booleanArgs.get('y')` will return null, throwing a `NullPointerException`. 
+The `falseIfNull` function had been used to protect against this, 
+but it has now become irrelevant. 
