@@ -64,3 +64,7 @@ Unfortunately, if you call `getBoolean` with `'y'`, but there is no `y` argument
 then `booleanArgs.get('y')` will return null, throwing a `NullPointerException`. 
 The `falseIfNull` function had been used to protect against this, 
 but it has now become irrelevant. 
+
+Indeed, the fix was not too difficult, I just had to move the check for null. 
+First, I removed the `falseIfNull` call in the `getBoolean` function. 
+It was useless now, so I also eliminated the function itself. 
