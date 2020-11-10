@@ -68,3 +68,5 @@ but it has now become irrelevant.
 Indeed, the fix was not too difficult, I just had to move the check for null. 
 First, I removed the `falseIfNull` call in the `getBoolean` function. 
 It was useless now, so I also eliminated the function itself. 
+Next, I split the function into two lines and put the `ArgumentMarshaller` into its own variable 
+and put in the null detection logic.
