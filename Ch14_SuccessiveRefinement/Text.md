@@ -70,3 +70,14 @@ First, I removed the `falseIfNull` call in the `getBoolean` function.
 It was useless now, so I also eliminated the function itself. 
 Next, I split the function into two lines and put the `ArgumentMarshaller` into its own variable 
 and put in the null detection logic.
+
+Adding `String` arguments was very similar to adding boolean arguments. 
+I had to change the `HashMap` and get the `parse`, `set`, 
+and `get` functions working. There shouldn't be any surprises in what follows 
+except, perhaps, that I seem to be putting all the marshalling implementation 
+in the `ArgumentMarshaller` base class instead of distributing it to the derivatives. 
+
+By now you should be able to see my intent. Once I get all the current 
+marshalling behavior into the `ArgumentMarshaller` base class, I'm going to start 
+pushing that behavior down into the derivatives. This will allow me to keep 
+everything running while I gradually change the shape of this program.
