@@ -81,3 +81,6 @@ By now you should be able to see my intent. Once I get all the current
 marshalling behavior into the `ArgumentMarshaller` base class, I'm going to start 
 pushing that behavior down into the derivatives. This will allow me to keep 
 everything running while I gradually change the shape of this program.
+
+The next step was to move (add) the `int` argument functionality 
+into the `ArgumentMarshaler`. Again, there aren't any surprises.
